@@ -43,6 +43,14 @@ export function Skills({ dict }: SkillsProps) {
         {skillCategories.map((cat) => {
           const Icon = CATEGORY_ICONS[cat.category] || Code;
           const displayCategory = categoryNames[cat.category] || cat.category;
+          const circuitCategory =
+            cat.category === "Frontend"
+              ? "frontend"
+              : cat.category === "Backend"
+              ? "backend"
+              : cat.category === "AI & Machine Learning"
+              ? "ai"
+              : "default";
 
           return (
             <div
@@ -60,6 +68,8 @@ export function Skills({ dict }: SkillsProps) {
                     <Badge
                       key={skill}
                       variant="neutral"
+                      data-circuit-node=""
+                      data-circuit-category={circuitCategory}
                       className="text-xs font-mono py-1 px-3 hover:border-[rgba(6,182,212,0.4)] hover:text-[#f8fafc] transition-colors"
                     >
                       {skill}

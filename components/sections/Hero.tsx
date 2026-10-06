@@ -60,15 +60,30 @@ export function Hero({ dict }: HeroProps) {
 
         {/* Quick Highlights / Tech Signals */}
         <div className="flex flex-wrap gap-2 pt-2">
-          <Badge variant="cyan" className="gap-1.5">
+          <Badge
+            variant="cyan"
+            className="gap-1.5"
+            data-circuit-node=""
+            data-circuit-category="backend"
+          >
             <Terminal className="w-3 h-3" />
             {tagSoftware}
           </Badge>
-          <Badge variant="teal" className="gap-1.5">
+          <Badge
+            variant="teal"
+            className="gap-1.5"
+            data-circuit-node=""
+            data-circuit-category="frontend"
+          >
             <Code2 className="w-3 h-3" />
             {tagWeb}
           </Badge>
-          <Badge variant="neutral" className="gap-1.5">
+          <Badge
+            variant="neutral"
+            className="gap-1.5"
+            data-circuit-node=""
+            data-circuit-category="ai"
+          >
             <Sparkles className="w-3 h-3 text-[#06b6d4]" />
             {tagAi}
           </Badge>
@@ -77,7 +92,13 @@ export function Hero({ dict }: HeroProps) {
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center gap-4 pt-4">
           <Link href="#projects">
-            <Button size="lg" variant="primary" className="group">
+            <Button
+              size="lg"
+              variant="primary"
+              className="group"
+              data-circuit-node=""
+              data-circuit-category="frontend"
+            >
               <span>{viewProjectsText}</span>
               <span className="inline-block transition-transform group-hover:translate-x-1 font-mono">
                 →
@@ -96,7 +117,12 @@ export function Hero({ dict }: HeroProps) {
           />
 
           <Link href="#contact">
-            <Button size="lg" variant="ghost">
+            <Button
+              size="lg"
+              variant="ghost"
+              data-circuit-node=""
+              data-circuit-category="default"
+            >
               {contactText}
             </Button>
           </Link>

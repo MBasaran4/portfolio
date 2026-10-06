@@ -72,7 +72,13 @@ export function Contact({ dict }: ContactProps) {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile (opens in a new tab)"
               >
-                <Button size="lg" variant="secondary" className="gap-2">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="gap-2"
+                  data-circuit-node=""
+                  data-circuit-category="frontend"
+                >
                   <LinkedinIcon className="w-4 h-4 text-[#06b6d4]" />
                   <span>LinkedIn ↗</span>
                 </Button>
@@ -87,7 +93,13 @@ export function Contact({ dict }: ContactProps) {
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile (opens in a new tab)"
               >
-                <Button size="lg" variant="secondary" className="gap-2">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="gap-2"
+                  data-circuit-node=""
+                  data-circuit-category="backend"
+                >
                   <GithubIcon className="w-4 h-4 text-[#06b6d4]" />
                   <span>GitHub ↗</span>
                 </Button>

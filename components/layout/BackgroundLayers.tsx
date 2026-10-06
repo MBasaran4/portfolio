@@ -1,5 +1,4 @@
 import * as React from "react";
-import { ReactiveBackground } from "@/components/layout/ReactiveBackground";
 
 export function BackgroundLayers() {
   return (
@@ -18,9 +17,6 @@ export function BackgroundLayers() {
             "radial-gradient(circle, rgba(6,182,212,0.4) 0%, rgba(20,184,166,0.15) 50%, transparent 80%)",
         }}
       />
-
-      {/* Reactive living particle field (subtle neural/organic canvas) */}
-      <ReactiveBackground />
 
       {/* Technical grid overlay */}
       <div className="absolute inset-0 technical-grid opacity-60" />

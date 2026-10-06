@@ -65,6 +65,8 @@ export function CopyEmail({
         variant={isConfigured ? "primary" : "secondary"}
         onClick={handleCopy}
         className="gap-2 font-mono"
+        data-circuit-node=""
+        data-circuit-category="default"
         aria-label={isConfigured ? `${copyText}: ${email}` : uponRequestText}
       >
         {copied ? (

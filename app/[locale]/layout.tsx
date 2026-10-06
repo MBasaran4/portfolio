@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { BackgroundLayers } from "@/components/layout/BackgroundLayers";
 import { ScrollProgress } from "@/components/animation/ScrollProgress";
+import { CircuitOverlay } from "@/components/CircuitOverlay";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { personalData } from "@/data/personal";
 import { getDictionary, isLocale, defaultLocale, locales } from "@/lib/i18n";
@@ -114,6 +115,7 @@ export default async function LocaleLayout({
     <html
       lang={currentLocale}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      data-scroll-behavior="smooth"
     >
       <head>
         <JsonLd
@@ -125,8 +127,9 @@ export default async function LocaleLayout({
         <SmoothScroll>
           <ScrollProgress />
           <BackgroundLayers />
+          <CircuitOverlay />
           <Navbar currentLocale={currentLocale} dict={dict.nav} />
-          <div className="flex-1 flex flex-col">{children}</div>
+          <div className="flex-1 flex flex-col relative z-10">{children}</div>
           <Footer dict={dict.footer} />
         </SmoothScroll>
       </body>

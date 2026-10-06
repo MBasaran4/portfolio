@@ -37,8 +37,19 @@ export function ProjectCard({
   const hasGithub = hasValue(project.githubUrl);
   const hasLive = hasValue(project.liveUrl);
 
+  const circuitCategory =
+    project.category === "Web Application"
+      ? "frontend"
+      : project.id === "agentverge" || project.id === "car-sound-fault-detection"
+      ? "ai"
+      : "backend";
+
   return (
-    <article className="p-6 sm:p-8 rounded-sm bg-[#131822]/90 border border-[rgba(6,182,212,0.14)] hover:border-[rgba(6,182,212,0.35)] transition-all duration-300">
+    <article
+      data-circuit-node=""
+      data-circuit-category={circuitCategory}
+      className="p-6 sm:p-8 rounded-sm bg-[#131822]/90 border border-[rgba(6,182,212,0.14)] hover:border-[rgba(6,182,212,0.35)] transition-all duration-300"
+    >
       <div
         className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center ${
           reverse ? "lg:flex-row-reverse" : ""
@@ -142,6 +153,8 @@ export function ProjectCard({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${project.title} GitHub repository (opens in a new tab)`}
+                    data-circuit-node=""
+                    data-circuit-category="backend"
                     className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-[#090b10] border border-[rgba(6,182,212,0.25)] text-[#06b6d4] hover:text-[#00f5d4] hover:border-[rgba(0,245,212,0.4)] transition-all active:translate-y-[1px]"
                   >
                     <GithubIcon className="w-3.5 h-3.5" />
@@ -155,6 +168,8 @@ export function ProjectCard({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${project.title} live demo website (opens in a new tab)`}
+                    data-circuit-node=""
+                    data-circuit-category="frontend"
                     className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-sm bg-[rgba(6,182,212,0.12)] border border-[rgba(6,182,212,0.35)] text-[#00f5d4] hover:bg-[rgba(6,182,212,0.22)] hover:text-[#f8fafc] hover:border-[#00f5d4] transition-all active:translate-y-[1px]"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />

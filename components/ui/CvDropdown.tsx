@@ -129,6 +129,8 @@ export function CvDropdown({
         aria-expanded={isOpen}
         aria-label={`${downloadCvText} - ${cvTrText} / ${cvEnText}`}
         className="gap-2"
+        data-circuit-node=""
+        data-circuit-category="default"
       >
         <FileText className="w-4 h-4 text-[#06b6d4]" />
         <span>{downloadCvText}</span>
